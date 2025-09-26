@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Al Rehman • Web Dev</title>
+  <meta name="description" content="Al Rehman Web Dev — modern websites, web apps, and performance-first frontends." />
+  <meta name="author" content="Al Rehman Web Dev" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232061ff'/%3E%3Ctext x='50' y='57' font-size='52' font-family='system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif' fill='white' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#2563eb; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --container:1100px; --max-width:1200px;
+      --fw-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    [data-theme='light'] {
+      --bg:#f7fbff; --card:#ffffff; --muted:#475569; --accent:#0066ff; --glass: rgba(15,23,42,0.03);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{margin:0;font-family:var(--fw-sans);background:linear-gradient(180deg,var(--bg), #071123);color:#e6eef8;line-height:1.45;-webkit-font-smoothing:antialiased;}
+    .wrap{max-width:var(--container);margin:0 auto;padding:28px}
+
+    /* top navigation */
+    header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:var(--accent);display:grid;place-items:center;font-weight:800;color:white}
+    .brand-name{background:linear-gradient(90deg,var(--accent),#2dd4bf);color:#021025;padding:2px 6px;border-radius:6px;display:inline-block}
+    nav{display:flex;gap:14px;align-items:center}
+    a.btn{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;background:transparent;color:var(--accent);border:1px solid rgba(255,255,255,0.06)}
+    .cta{background:linear-gradient(90deg,var(--accent),#2dd4bf);color:#021025;border:none;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none}
+
+    /* hero */
+    .hero {
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .hero h1 {
+      font-size:clamp(22px, 6vw, 44px);
+      line-height:1.3;
+    }
+    .hero h1 span{background:linear-gradient(90deg,var(--accent),#2dd4bf);color:#021025;padding:4px 10px;border-radius:8px}
+    .hero p{color:var(--muted);margin:10px 0 20px;font-size:18px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:26px}
+    .feature{padding:18px;border-radius:12px;background:var(--card);}
+    .feature h3{margin:0 0 8px}
+    .feature h3 span{background:linear-gradient(90deg,var(--accent),#2dd4bf);color:#021025;padding:2px 6px;border-radius:6px}
+    .muted{color:var(--muted)}
+
+    form{display:grid;gap:12px}
+    input,textarea,button{border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;font:inherit}
+    input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.32)}
+    button[type='submit']{cursor:pointer}
+
+    footer{margin-top:48px;padding:28px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    @media (max-width:768px){
+      .hero { flex-direction:column; text-align:center; }
+      .hero h1 { font-size:clamp(20px, 7vw, 32px); }
+      nav { flex-wrap:wrap; gap:8px; }
+    }
+
+    /* welcome animation */
+    .welcome-text {
+      display:inline-block;
+      padding:12px 20px;
+      color:#fff;
+      border-radius:8px;
+      animation:fadeInUp 3.2s ease-out forwards;
+      font-size:clamp(22px,3.6vw,28px);
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform:translateY(12px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+  </style>
+
+<header>
+  <div class="brand">
+    <div class="logo" aria-hidden>
+      <img src="MEE3.PNG" width="45" alt="logo">
+    </div>
+    <div class="brand-text">
+      <div class="brand-name">AL REHMAN WEB DEV</div>
+      <div class="tagline">Basic web developer • designer</div>
+    </div>
+  </div>
+
+  <nav aria-label="Main navigation">
+    <a href="#contact" class="btn">Contact</a>
+      <button id="theme-toggle" class="btn" aria-pressed="false" title="Toggle theme">🌞</button>
+  </nav>
+  <link rel="stylesheet" href="style.css">
+
+</header>
+
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>
+            <span class="welcome-text">Welcome to Al-Rehman Web Dev</span>
+            <img src="MEE2.png" width="400" alt="Hero Image">
+          </h1>
+          <p class="muted">Al Rehman Web Dev — I’m a web development trainer making websites for others. I guide aspiring developers through hands-on projects and best practices. Together, we create fast, accessible, and maintainable web experiences.</p>
+
+          <div class="grid">
+            <div class="feature card">
+              <h3><span>About Me</span></h3>
+              <p class="muted">I’m Abdul Rehman Butt, a passionate web developer and designer. I build clean, functional, and visually appealing websites. I’m always learning and exploring new technologies to improve my skills.</p>
+            </div>
+            <div class="feature card">
+              <h3><span>Skills</span></h3>
+              <p class="muted">I’m a web developer and enthusiastic learner, always exploring new technologies. I’m also an FSC 2nd-year student, balancing studies with practical web development projects.</p>
+            </div>
+            <div class="feature card">
+              <h3><span>What I Offer?</span></h3>
+              <p class="muted">I’m a trainer so I build websites for clients at very affordable rates. Quality web development doesn’t have to be expensive — I make it accessible for everyone. It's a big offer!!</p>
+            </div>
+          </div>
+
+          <p style="margin-top:18px">
+            <a href="#contact" class="cta">MAKE YOUR WEBSITES FROM US</a>
+          </p>
+         <P> <h2> <span>A GLIMPSE OF CODING</span></h2>
+        <img src="code.png" width=400"CODEING"></P>
+        </div>
+      </section>
+
+      <section id="portfolio" class="portfolio">
+        <h2><span>Available Services</span></h2>
+        <div class="portfolio-grid">
+          <article class="thumb card">1 — WEB DEV</article>
+          <article class="thumb card">2 — WEB DESIGNER</article>
+          <article class="thumb card">3 — MODERN WEBS</article>
+          <article class="thumb card">4 — NEW TRENDS</article>
+        </div>
+      </section>
+
+      <section class="video-section">
+        <h2><span>Intro Video</span></h2>
+        <video width="440" height="360" controls>
+          <source src="INTRO.mp4" type="video/mp4">
+          <source src="INTRO.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <section id="contact" style="margin-top:34px">
+        <h2><span>Get in touch</span></h2>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px;align-items:start">
+          <div class="card">
+            <form id="contact-form" onsubmit="handleSubmit(event)">
+              <label for="name" class="muted">Your name</label>
+              <input id="name" name="name" placeholder="Jane Doe" required />
+
+              <label for="email" class="muted">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" required />
+
+              <label for="message" class="muted">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+
+              <button type="submit" class="cta">Send message</button>
+            </form>
+            <p id="form-result" class="muted" style="margin-top:10px"></p>
+          </div>
+
+          <aside class="card">
+            <strong>Office</strong>
+            <p class="muted" style="margin:8px 0">ONLY ONLINE</p>
+            <p style="font-size:13px">Email: <a href="mailto:alrehmanwebdev.com">alrehmanwebdev.com</a></p>
+            <p style="font-size:13px">Phone: +9246 7277657</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Al Rehman Web Dev</div>
+      <div class="muted">Built with modern web standards • Accessible • Fast</div>
+    </footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // theme toggle
+    const root = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if(saved === 'light') root.setAttribute('data-theme','light');
+    function updateThemeButton(){
+      const isLight = root.getAttribute('data-theme') === 'light';
+      toggle.textContent = isLight ? '🌙' : '🌞';
+      toggle.setAttribute('aria-pressed', String(isLight));
+    }
+    updateThemeButton();
+    toggle.addEventListener('click', ()=>{
+      const isLight = root.getAttribute('data-theme') === 'light';
+      root.setAttribute('data-theme', isLight ? 'dark' : 'light');
+      localStorage.setItem('theme', isLight ? 'dark' : 'light');
+      updateThemeButton();
+    });
+
+    // contact handler
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = e.target.name.value.trim();
+      const email = e.target.email.value.trim();
+      const message = e.target.message.value.trim();
+      const subject = encodeURIComponent('Project inquiry from ' + name);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      const mailto = `mailto:hello@alrehman.dev?subject=${subject}&body=${body}`;
+      try{
+        window.location.href = mailto;
+        document.getElementById('form-result').textContent = 'Opening mail client...';
+      }catch(err){
+        navigator.clipboard.writeText(`${name} <${email}>\n\n${message}`)
+          .then(()=> document.getElementById('form-result').textContent = 'Message copied to clipboard. Email: hello@alrehman.dev')
+          .catch(()=> document.getElementById('form-result').textContent = 'Please email hello@alrehman.dev');
+      }
+    }
