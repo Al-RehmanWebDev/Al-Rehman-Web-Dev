@@ -1,4 +1,8 @@
 body {
+  .logo {
+    background-image: url('/MEE3.png');
+}
+
   margin: 0;
   font-family: Arial, sans-serif;
   background: #0f1724;
